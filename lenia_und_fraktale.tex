@@ -1,0 +1,260 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Stylish Article
+% LaTeX Template
+% Version 2.2 (2020-10-22)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) 
+% With extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[fleqn,10pt,ngerman]{SelfArx} % Document font size and equations flushed left
+
+\usepackage{babel} % Specify a different language here - German in this case
+
+\usepackage{csquotes} % used for German quotes
+
+\usepackage{lipsum} % Required to insert dummy text. To be removed otherwise
+
+\usepackage{subcaption} % used for subfigures
+
+\usepackage{tikz} % used for tikz figures
+
+\usepackage{pgfplots} % used for pgfplots
+
+\usepackage[%
+    backend=biber,  % use bibtex as backend
+    urldate=iso,    % use iso date format for urls
+    seconds=true,   % display seconds in time stamps, needed for urldate
+    natbib=true,    % enable natbib compatibility
+    % style=ieee,     % use ieee style
+    sorting=none    % sort by appearance in document
+]{biblatex} % bibliography
+
+\addbibresource{literatur.bib}
+
+%----------------------------------------------------------------------------------------
+%	COLUMNS
+%----------------------------------------------------------------------------------------
+
+\setlength{\columnsep}{0.55cm} % Distance between the two columns of text
+\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
+
+\setlength\emergencystretch\textwidth % prevent overfull lines
+
+%----------------------------------------------------------------------------------------
+%	COLORS
+%----------------------------------------------------------------------------------------
+
+\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
+
+%----------------------------------------------------------------------------------------
+%	HYPERLINKS
+%----------------------------------------------------------------------------------------
+
+\usepackage{hyperref} % Required for hyperlinks
+
+\hypersetup{
+	hidelinks,
+	colorlinks,
+	breaklinks=true,
+	urlcolor=color2,
+	citecolor=color1,
+	linkcolor=color1,
+	bookmarksopen=false,
+	pdftitle={Title},
+	pdfauthor={Author},
+}
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\JournalInfo{Praktikum Computergrafik SoSe 2023} % Journal information
+\Archive{M. Sc. Hendrik Brückler, Prof. Dr. Marcel Campen} % Additional notes (e.g. copyright, DOI, review/research article)
+
+% \PaperTitle{Erzeugung von Mikrokosmen mittels Lenia-Algorithmus und Fraktalen mittels Ray-Marching} % Article title
+\PaperTitle{Visualisierung von Mikrokosmen und Fraktalen mit dem Lenia-Algorithmus und dem Ray-Marching-Verfahren} % Article title
+
+\Authors{\phantom{Author}} % Authors
+% \affiliation{\textsuperscript{1}\textit{Department of Biology, University of Examples, London, United Kingdom}} % Author affiliation
+% \affiliation{\textsuperscript{2}\textit{Department of Chemistry, University of Examples, London, United Kingdom}} % Author affiliation
+% \affiliation{*\textbf{Corresponding author}: john@smith.com} % Corresponding author
+
+% \newcommand{\SeminarKind}{Programmierpraktikum}
+\newcommand{\SeminarTitle}{Praktikum Computergrafik}
+\newcommand{\SeminarTerm}{Sommersemester 2023}
+
+% \Keywords{Keyword1 --- Keyword2 --- Keyword3} % Keywords - if you don't want any simply remove all the text between the curly brackets
+\newcommand{\keywordname}{Keywords} % Defines the keywords heading name
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+% \Abstract{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla. Curabitur auctor semper nulla. Donec varius orci eget risus. Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam. Duis eget orci sit amet orci dignissim rutrum.}
+
+
+%----------------------------------------------------------------------------------------
+%	Compressed version
+%----------------------------------------------------------------------------------------
+
+\newif\ifJPGCompressed
+\JPGCompressedtrue % comment out to disable compression
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\input{chapters/titlepage.tex}
+
+\maketitle % Output the title and abstract box
+
+\tableofcontents % Output the contents section
+
+\thispagestyle{empty} % Removes page numbering from the first page
+
+\setlength{\parindent}{0pt} % Removes paragraph indentation
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\input{chapters/introduction.tex}
+\input{chapters/lenia.tex}
+\input{chapters/ray_marching.tex}
+\input{chapters/conclusion.tex}
+
+
+%------------------------------------------------
+
+% \section{Methods}
+
+% \begin{figure*}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+% 	\includegraphics[width=\linewidth]{view}
+% 	\caption{Wide Picture}
+% 	\label{fig:view}
+% \end{figure*}
+
+% \lipsum[4] % Dummy text
+
+% \begin{equation}
+% 	\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
+% 	\label{eq:refname2}
+% \end{equation}
+
+% \lipsum[5] % Dummy text
+
+% \begin{enumerate}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
+% 	\item First item in a list
+% 	\item Second item in a list
+% 	\item Third item in a list
+% \end{enumerate}
+
+% \subsection{Subsection}
+
+% \lipsum[6] % Dummy text
+
+% \paragraph{Paragraph} \lipsum[7] % Dummy text
+% \paragraph{Paragraph} \lipsum[8] % Dummy text
+
+% \subsection{Subsection}
+
+% \lipsum[9] % Dummy text
+
+% \begin{figure}[ht]\centering
+% 	\includegraphics[width=\linewidth]{results}
+% 	\caption{In-text Picture}
+% 	\label{fig:results}
+% \end{figure}
+
+% Reference to Figure \ref{fig:results}.
+
+% %------------------------------------------------
+
+% \section{Results and Discussion}
+
+% \lipsum[10] % Dummy text
+
+% \subsection{Subsection}
+
+% \lipsum[11] % Dummy text
+
+% \begin{table}[hbt]
+% 	\caption{Table of Grades}
+% 	\centering
+% 	\begin{tabular}{llr}
+% 		\toprule
+% 		\multicolumn{2}{c}{Name} \\
+% 		\cmidrule(r){1-2}
+% 		First name & Last Name & Grade \\
+% 		\midrule
+% 		John & Doe & $7.5$ \\
+% 		Richard & Miles & $2$ \\
+% 		\bottomrule
+% 	\end{tabular}
+% 	\label{tab:label}
+% \end{table}
+
+% \subsubsection{Subsubsection}
+
+% \lipsum[12] % Dummy text
+
+% \begin{description}
+% 	\item[Word] Definition
+% 	\item[Concept] Explanation
+% 	\item[Idea] Text
+% \end{description}
+
+% \subsubsection{Subsubsection}
+
+% \lipsum[13] % Dummy text
+
+% \begin{itemize}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
+% 	\item First item in a list
+% 	\item Second item in a list
+% 	\item Third item in a list
+% \end{itemize}
+
+% \subsubsection{Subsubsection}
+
+% \lipsum[14] % Dummy text
+
+% \subsection{Subsection}
+
+% \lipsum[15-23] % Dummy text
+
+% %------------------------------------------------
+
+% \phantomsection
+% \section*{Acknowledgments} % The \section*{} command stops section numbering
+
+% \addcontentsline{toc}{section}{Acknowledgments} % Adds this section to the table of contents
+
+% So long and thanks for all the fish \cite{Figueredo:2009dg, Smith:2012qr}.
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\phantomsection
+% \bibliographystyle{unsrt}
+% \bibliography{sample.bib}
+\printbibliography
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
